@@ -109,6 +109,7 @@ public class ProductController : Controller
     // POST: Product/Edit/5
     // To protect form overposting attacks, enable the specific properties you want to bind to.
     // for more details check out http://go.microsoft.com/fwlink/?LinkId=317598.
+    [HttpPost]
     public async Task<IActionResult> Edit(int id, [Bind("Id,Name,QuantityInStock,Price")] ProductEditVM product)
     {
         if (id != product.Id)

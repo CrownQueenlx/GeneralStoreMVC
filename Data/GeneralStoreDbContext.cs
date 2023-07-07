@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace GeneralStoreMVC.Data;
 
@@ -15,11 +13,11 @@ public partial class GeneralStoreDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Customer> Customers { get; set; }
+    public virtual DbSet<Customer> Customers { get; set; } = null!;
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Product> Products { get; set; } = null!;
 
-    public virtual DbSet<Transaction> Transactions { get; set; }
+    public virtual DbSet<Transaction> Transactions { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Name=ConnectionStrings:GeneralStoreDb");
